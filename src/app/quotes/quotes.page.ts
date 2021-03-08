@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core"
+import { AuthService } from "../auth.service"
 import { DataService } from "../data.service"
 
 @Component({
@@ -9,7 +10,12 @@ import { DataService } from "../data.service"
 export class QuotesPage implements OnInit {
     public quotes: any = []
 
-    constructor(private dataService: DataService) {
+    constructor(private dataService: DataService, public authService: AuthService) {
+        this.getQuotes()
+        this.dataService.refreshQuotes.subscribe(() => this.getQuotes())
+    }
+
+    getQuotes() {
         this.dataService.getData("quotes").subscribe(data => (this.quotes = data))
     }
 

@@ -12,6 +12,14 @@ const routes: Routes = [
                 loadChildren: () => import("../quotes/quotes.module").then(m => m.QuotesPageModule)
             },
             {
+                path: "quotes/edit-quote",
+                loadChildren: () => import("../edit-quote/edit-quote.module").then(m => m.EditQuotePageModule)
+            },
+            {
+                path: "quotes/:id/edit",
+                loadChildren: () => import("../edit-quote/edit-quote.module").then(m => m.EditQuotePageModule)
+            },
+            {
                 path: "quotes/:id",
                 loadChildren: () => import("../quote-details/quote-details.module").then(m => m.QuoteDetailsPageModule)
             },

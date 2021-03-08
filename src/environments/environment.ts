@@ -3,9 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
-  apiUrl: 'http://localhost/wordpress/wp-json/wp/v2',
-};
+    production: false,
+    apiUrl: "http://localhost/wordpress/wp-json"
+}
 
 /*
  * For easier debugging in development mode, you can import the following file
